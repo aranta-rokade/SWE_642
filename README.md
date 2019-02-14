@@ -1,6 +1,6 @@
 # GMU SWE 642: Software Engineering for the World Wide Web
 
-### About the course : 
+### About the course
 Detailed study of the engineering methods and technologies for building interactive web sites for e-commerce and other web-based applications. Engineering principles for building web sites that exhibit high reliability, usability, security, availability, scalability and maintainability are presented. Methods such as client-server programming, component-based software development, middleware, and reusable components are covered.
 [Course Page](https://cs.gmu.edu/media/syllabi/Fall2018/SWE_642DubeyV001.pdf)
 
