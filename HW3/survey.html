@@ -1,0 +1,235 @@
+<!-- 
+    Author: Aranta Rokade
+    SWE 642 : Homework 2
+    CS Department Survey Page
+ -->
+<!DOCTYPE html>
+
+<head>
+    <title>Survey | GMU | CS </title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/~arokade/swe642/HW3/styles.css" />
+</head>
+<body>
+    <header>
+        <a class="logo" href="https://www2.gmu.edu/">
+            <img src="/~arokade/swe642/HW3/gmu_logo.png" alt="GMU Logo" />
+        </a>
+        <span>Department of Computer Science</span>
+    </header>
+    <div class="conatiner">
+        <section id="index-link">
+            <p>
+                <em id="greeting"></em>
+            </p>
+            <h4>Want to go back? <a href="/~arokade/swe642/HW3/department.html">Index Page.</a></h4>
+        </section>
+        <section id="survey">
+            <h1>Student Survey</h1>
+            <form autocomplete="on" method="post" onreset="resetForm();">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Username *</label>
+                            </td>
+                            <td>
+                                <input id="username" type="text" required autofocus />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Street Address *</label>
+                            </td>
+                            <td>
+                                <input id="address" type="text" required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>City</label>
+                            </td>
+                            <td>
+                                <label id="city"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>State</label>
+                            </td>
+                            <td>
+                                <label id="state"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Zip Code</label>
+                            </td>
+                            <td>
+                                <input id="zipcode" type="number" pattern="^\d{5}(?:[-\s]\d{4})?$" onblur="validateZip(this.value);"/>
+                                <br />
+                                <label id="zipcode-error" class="error"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Telephone No.</label>
+                            </td>
+                            <td>
+                                <input id="telephone" type="tel" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
+                                    placeholder="(xxx) xxx-xxxx" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Email Id. *</label>
+                            </td>
+                            <td>
+                                <input id="email" type="email" required placeholder="username@host.com" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>URL</label>
+                            </td>
+                            <td>
+                                <input id="url" type="url" placeholder="www.website.domain" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Date of Survey</label>
+                            </td>
+                            <td>
+                                <input id="date" type="date" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>High School Graduation</label>
+                            </td>
+                            <td>
+                                <input id="grad_month" type="text" placeholder="Month" list="months" />
+                                <datalist id="months">
+                                    <option value="January"></option>
+                                    <option value="February"></option>
+                                    <option value="March"></option>
+                                    <option value="April"></option>
+                                    <option value="May"></option>
+                                    <option value="June"></option>
+                                    <option value="July"></option>
+                                    <option value="August"></option>
+                                    <option value="September"></option>
+                                    <option value="October"></option>
+                                    <option value="November"></option>
+                                    <option value="December"></option>
+                                </datalist>
+                                <input id="grad_year" type="number" min="1900" max="2100" placeholder="yyyy" />
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>Feedback</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <label>What did you like the most about GMU? *</label>
+                            </td>
+                            <td>
+                                <input name="likes" type="checkbox" value="0" />Students
+                                <input name="likes" type="checkbox" value="1" />Location
+                                <input name="likes" type="checkbox" value="2" />Campus
+                                <input name="likes" type="checkbox" value="3" />Atmosphere
+                                <input name="likes" type="checkbox" value="4" />Dorm Rooms
+                                <input name="likes" type="checkbox" value="5" />Sports
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>What interested you the most in GMU? *</label>
+                            </td>
+                            <td>
+                                <input name="interest" type="radio" value="0" required />Friends
+                                <input name="interest" type="radio" value="1" required />Television
+                                <input name="interest" type="radio" value="2" required />Internet
+                                <input name="interest" type="radio" value="3" required />Other
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Additional Comments</label>
+                            </td>
+                            <td>
+                                <textarea name="other" rows="1"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label>How likey are you to recommend GMU to others?</label></td>
+                            <td>
+                                <select id="recommend">
+                                    <option value="">--Select--</option>
+                                    <option value="0">Very Likey</option>
+                                    <option value="1">Likey</option>
+                                    <option value="2">Unlikey</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <fieldset>
+                    <legend>Extension</legend>
+                    <table>
+                        <tr>
+                            <td>
+                                <label>Data</label>
+                            </td>
+                            <td>
+                                <input id="data" type="text" onblur="calc(this.value);" placeholder="1,2,3,4,5,6,7,8,9,10"/>
+                                <br />
+                                <label id="data-error" class="error"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Average</label>
+                            </td>
+                            <td>
+                                <label id="average"></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>Maximum</label>
+                            </td>
+                            <td>
+                                <label id="maximum"></label>
+                            </td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <br />
+                <input type="submit" onclick="validateForm(event);" value="Submit" />
+                <input type="reset" value="Reset" />
+            </form>
+        </section>
+    </div>
+    <footer>
+        <address>
+            Aranta Rokade
+            G01089491 <br />
+            Department of Computer Science<br />
+            Nguyen Engineering Building<br />
+            4400 University Drive<br />
+            Fairfax, VA 22030<br />
+        </address>
+        <a class="logo" href="https://www2.gmu.edu/">
+            <img src="/~arokade/swe642/HW3/gmu_logo.png" alt="GMU Logo" />
+        </a>
+    </footer>
+</body>
+<script src="/~arokade/swe642/HW3/scripts.js"></script>
+<script type="text/javascript">
+    greet();
+ </script>
+</html>

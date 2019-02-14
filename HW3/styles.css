@@ -1,0 +1,104 @@
+/* 
+    Author: Aranta Rokade
+    SWE 642 : Homework 2
+    CSS File  
+*/
+
+/* mandatory css */
+
+/* 
+body of the window rendering your page should have a light gray (or a color of your
+choice) background */
+body {
+    margin: 0px;
+    font-family: Calibri, sans-serif;
+    background-color: #fafafa;
+}
+
+/* 
+h1 elements in blue,
+heading at the top of the page should use text-shadows, 
+inside a rectangular box using blue solid border of 5px width */
+h1 {
+    color: blue;
+    text-shadow: 2px 2px 2px dimgrey;
+    border: 5px solid blue;
+}
+
+/* 
+style class that could
+be used to for any element on the page */
+.padding {
+    padding-left: 10px;
+}
+
+/* end of mandatory css */
+
+/* header & footer */
+header {
+    background-color: #123B22;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+    padding: 20px;
+}
+
+header a {
+    display: inline-block;
+    vertical-align: middle;
+}
+header span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+footer {
+    background-color: #123B22;
+    color: white;
+    text-align: right;
+    padding: 20px;
+}
+
+footer a {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+footer address {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.logo img {
+    vertical-align: middle;
+    width: 110px;
+}
+
+a.logo:hover {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: gold;
+}
+/* end of header & footer */
+
+
+.conatiner {
+    margin: 20px 100px 20px 100px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 20px;
+}
+
+
+/* survey form */
+table tr td {
+    padding: 5px;
+}
+.error {
+    color: red;
+    font-style: italic;
+}
+/* end of survey form */

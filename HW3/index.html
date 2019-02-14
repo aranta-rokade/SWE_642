@@ -1,0 +1,57 @@
+<!-- 
+    Author: Aranta Rokade
+    SWE 642 : Homework 2
+    CS Department Infomration Page
+ -->
+<!DOCTYPE html>
+
+<head>
+    <title>SWE642 | HW</title>
+    <meta charset="utf-8" />
+    <link type="text/css" rel="stylesheet" href="/~arokade/swe642/HW3/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/~arokade/swe642/HW3/styles.css" />
+</head>
+
+<body>
+    <header>
+        <a class="logo" title="Please visit <a href='http://www.gmu.edu'>http://www.gmu.edu</a> for more information."
+            href="https://www2.gmu.edu/">
+            <img src="/~arokade/swe642/HW3/gmu_logo.png" alt="GMU Logo" />
+        </a>
+        <span>GMU SWE 642 Homeworks</span>
+    </header>
+    <div class="conatiner">
+        <div id="tabs">
+            <ul>
+                <li><a href="http://mason.gmu.edu/~arokade/swe642/HW3/survey.html">Homework 3</a></li>
+                <li><a href="http://mason.gmu.edu/~arokade/swe642/HW2/index.html">Homework 2</a></li>
+                <li><a href="http://mason.gmu.edu/~arokade/swe642/HW1/index.html">Homework 1</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer>
+        <address>
+            Aranta Rokade
+            G01089491 <br />
+            Department of Computer Science<br />
+            Nguyen Engineering Building<br />
+            4400 University Drive<br />
+            Fairfax, VA 22030<br />
+        </address>
+        <a class="logo" title="Please visit <a href='http://www.gmu.edu'>http://www.gmu.edu</a> for more information."
+            href="https://www2.gmu.edu/">
+            <img src="/~arokade/swe642/HW3/gmu_logo.png" alt="GMU Logo" />
+        </a>
+    </footer>
+</body>
+<script src="/~arokade/swe642/HW3/jquery-ui/external/jquery/jquery.js"></script>
+<script src="/~arokade/swe642/HW3/jquery-ui/jquery-ui.js"></script>
+<script>
+    $("#tabs").tabs();
+    $(".logo").tooltip({
+        content: function () {
+            return $(this).prop('title');
+        }
+    });
+</script>
+</html>
